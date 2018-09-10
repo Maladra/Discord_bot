@@ -55,7 +55,7 @@ ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
 ########## PERMET DE RECUPERER MUSIQUE DEPUIS YOUTUBE ##########
 class YTDLSource(discord.PCMVolumeTransformer):
     """A class which uses YTDL to retrieve a song and returns it as a source for Discord."""
-    def __init__(self, source, *, data, volume=.4):
+    def __init__(self, source, *, data, volume=.1):
         super().__init__(source, volume)
 
         self.data = data
@@ -91,7 +91,7 @@ class MusicPlayer:
         self.guild = ctx.guild # représente le serveur
         self.default_chan = ctx.channel # représente le channel du bot
         self.current = None
-        self.volume = .4
+        self.volume = .1
 
         self.now_playing = None
 
